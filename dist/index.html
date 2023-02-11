@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e233d6f6af.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="content">
+        <header id="header">
+            <h1>What to do?</h1>
+            <span id="add_btn" title="Add a task">
+                <i class="fa-sharp fa-solid fa-calendar-plus"></i>
+            </span>
+        </header>
+        <div class="table__header">
+            <h1>Your current to-do list</h1>
+            <div class="legend">
+                <div class="table_legend">
+                    <div class="legend_box red"></div>
+                    <span>- High priority</span>
+                </div>
+                <div class="table_legend">
+                    <div class="legend_box yellow"></div>
+                    <span>- Mid priority</span>
+                </div>
+                <div class="table_legend">
+                    <div class="legend_box blue"></div>
+                    <span>- Low priority</span>
+                </div>
+            </div>
+        </div>
+        <div id="table"></div>
+        <div class="table__header done_header">
+            <h1>Your completed tasks</h1>
+        </div>
+        <div id="done_table"></div>
+        <div class="modal hidden">
+            <div id="form__container">
+                <div class="cont_title">
+                    <h3 class="cont_title_h3">New Task</h3>
+                    <span class="close_form"><i class="fa-solid fa-xmark"></i></span>
+                </div>
+                <form action="" method="post">
+                    <div class="first_column">
+                        <div class="form__div">
+                            <label for="title">Title:</label>
+                            <input type="text" id="title" name="title" maxlength="35" required >
+                        </div>
+                        <div class="form__div">
+                            <label for="description">Description:</label>
+                            <textarea name="description" id="descr" cols="30" rows="10" required></textarea>
+                        </div>
+                    </div>
+                    <div class="second_column">
+                        <div class="form__div">
+                            <label for="date">Due Date:</label>
+                            <input type="datetime-local" name="date" id="date" required>
+                        </div>
+                        <div class="form__div">
+                            <label for="priority">Priority:</label>
+                            <select name="priority" id="priority" required>
+                                <option value="High">High prior.</option>
+                                <option value="Medium">Mid prior.</option>
+                                <option value="Low">Low prior.</option>
+                            </select>
+                        </div>
+                    <div class="form__div btn">
+                        <input type="submit" id='submit_btn' class="submit_btn" value="Add Task">
+                        <input type="submit" id="submit_btn" class="apply_btn" value="Apply Changes">
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

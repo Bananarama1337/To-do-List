@@ -1,0 +1,301 @@
+:root{
+    --main-red-color: #dc2626;
+    --main-yellow-color: #fbbf24;
+    --main-blue-color: #06b6d4;
+    --main-green-color: #16a34a;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 62.5%;
+}
+
+#header{
+    background-color: black;
+    width: 100%;
+    padding: 1rem 5vw 1rem 3vw;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header > h1{
+    font-size: 4rem;
+}
+
+#add_btn{
+    font-size: 5.2rem;
+    line-height: 1;
+    cursor: pointer;
+    margin-top: -1.2rem;
+}
+
+/* Форма */
+
+label, input, textarea, select, option{
+    font-size: 2rem;
+}
+
+label{
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+textarea{
+    resize: none;
+}
+
+input{
+    padding: 0.5rem;
+}
+
+input:focus, textarea:focus{
+    outline: none;
+}
+
+select{
+    padding: .8rem;
+}
+
+#form__container{
+    background-color: #fff;
+    border: 0.1px solid black;
+    width: max-content;
+    border-radius: .5rem;
+    margin: 2rem 1rem;
+
+    transition: .5s linear;
+}
+
+.cont_title{
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    box-shadow: 1px 0px 1px 1px grey;
+}
+
+.cont_title > h3{
+    font-size: 4rem;
+}
+
+span.close_form{
+    font-size: 4rem;
+    margin-top: -1.8rem;
+    cursor: pointer;
+}
+
+.form__div{
+    display: flex;
+    flex-direction: column;
+}
+
+.form__div + .form__div{
+    margin-top: 2rem;
+}
+
+#submit_btn{
+    background-color: var(--main-red-color);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+form{
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.modal.show{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+}
+
+.modal.hidden{
+    display: none;
+}
+
+/* Стили для списка заданий */
+
+#table, #done_table{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 2rem;
+}
+
+#table{
+    background-color: #f1f5f9;
+}
+
+/* Стили для header'a */
+
+.table__header{
+    text-align: center;
+    background-color: #f1f5f9;
+    padding: 1rem;
+}
+
+.table__header.done_header{
+    background: linear-gradient(#f1f5f9, #fff);
+}
+
+.table__header > h1{
+    font-size: 5rem;
+}
+
+.legend{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.table_legend > span{
+    font-size: 2rem;
+}
+
+.table_legend{
+    display: flex;
+    align-items: center;
+    margin: .5rem 0;
+}
+
+.legend_box{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin: 0 1rem;
+}
+
+.legend_box.red{
+    background-color: var(--main-red-color);
+}
+
+.legend_box.blue{
+    background-color: var(--main-blue-color);
+}
+
+.legend_box.yellow{
+    background-color: var(--main-yellow-color);
+}
+
+/* Стили для обертки задания */
+
+.task__wrap{
+    width: 38rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    box-shadow: 1px 0px 1px 1px gray;
+    background-color: #f8fafc;
+    padding: 2rem 2rem 1rem 3rem;
+}
+
+.task__wrap.task__wrap--red{
+    border-left: 8px solid var(--main-red-color);
+}
+
+.task__wrap.task__wrap--yellow{
+    border-left: 8px solid var(--main-yellow-color);
+}
+
+.task__wrap.task__wrap--blue{
+    border-left: 8px solid var(--main-blue-color);
+}
+
+.task__wrap.task__wrap--green{
+    border-left: 8px solid var(--main-green-color);
+}
+
+.task__title{
+    font-size: 3rem;
+}
+
+.task__date{
+    font-size: 2rem;
+}
+
+.task__description{
+    font-size: 2rem;
+}
+
+/* Стили для иконок задания */
+
+.task__changes{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.task__icon{
+    font-size: 4rem;
+    cursor: pointer;
+    padding: 1rem 1rem 0 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.apply_btn{
+    display: none;
+}
+
+/* Добавление текста для иконок при hover*/
+
+.icon_hover{
+    text-transform: capitalize;
+    line-height: 2;
+    padding: 0 1rem;
+    font-size: 1.7rem;
+}
+
+.task__icon .icon_hover{
+    visibility: hidden;
+
+    border-radius: .7rem;
+    width: max-content;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+
+    top: -1.5rem;
+    position: absolute;
+    z-index: 3;
+}
+
+.task__icon .icon_hover.complete{
+    left: -2.1rem;
+}
+
+.task__icon .icon_hover.change{
+    left: -1.4rem;
+}
+
+.task__icon .icon_hover.delete{
+    left: -1.15rem;
+}
+
+.task__icon .icon_hover::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+  }
+
+.task__icon:hover .icon_hover{
+    visibility: visible;
+}
